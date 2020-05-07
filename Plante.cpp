@@ -1,43 +1,43 @@
-#ifndef ESCARGOT_CPP
-#define ESCARGOT_CPP
-#include "Escargot.h"
+#ifndef PLANTE_CPP
+#define PLANTE_CPP
+#include "Plante.h"
+
+//définition des variables et fonctions
 
 #include <string>
 
 
-    Escargot::Escargot(std::string name, int motiv, int num) :
-        _nom(name), _motivation(motiv), _numero(num), _distance(0)
+    Plante::Plante(std::string name, int hydrat, std::string typ) :
+        _nom(name), _hydratation(hydrat), _type(typ), _pousse(0)
         {}
 
-    std::string Escargot::getName(){                //fonction qui va permettre de donner un nom
+    std::string Plante::getName(){                //fonction qui va permettre de donner un nom
         return _nom;
     }
 
-    std::string Escargot::getLook(){                //fonction qui permet de montrer l'aspect de notre joueur en écriture
-        return "@"+std::to_string(_numero);
+    int Plante::getPousser(){                    //fonction qui montre la distance atteinte
+        return _pousse;
     }
 
-    int Escargot::getDistance(){                    //fonction qui montre la distance atteinte
-        return _distance;
+    int Plante::getHydrater(){
+        return _hydratation;
     }
-
-    int Escargot::getMotiver(){
-        return _motivation;
-    }
-    void Escargot::avancer(){                       //fonction qui montre l'avancement
-        _distance += _motivation;                   //position de à l'instant t de l'escargot + le déplacement en fonction de la valeur dans motivation
-        _motivation -= 1;                           //après effort d'avancement, perte de motivation
+    
+    void Plante::grandir(){                       //fonction qui montre l'avancement
+        _pousse += _hydratation;                   //position de à l'instant t de l'escargot + le déplacement en fonction de la valeur dans motivation
+        _hydratation -= 1;                           //après effort d'avancement, perte de motivation
         
-        if(_motivation<0){                          //permet à l'escargot de ne pas reculer pendant la course
-            _motivation=0;
-        }                           
+        if(_hydratation<0){                          //permet à l'escargot de ne pas reculer pendant la course
+            _hydratation=0;
+        }            
+
         //_motivation>1?_motivation--:_motivation=0;
         //A ? B : C
         // si A alors B sinon C
     }
 
-    void Escargot::motiver(){                       //augmenter le niveau de motivation pour pouvoir avancer
-        _motivation += 3;
+    void Plante::hydrater(){                       //augmenter le niveau de motivation pour pouvoir avancer
+        _hydratation += 3;
     }
 
 

@@ -1,23 +1,27 @@
-#ifndef ESCARGOT_H
-#define ESCARGOT_H
+#ifndef PLANTE_H
+#define PLANTE_H
 #include <string>
 
-class Escargot{
+//insertion des variables et fonction qui vont être appelées
+
+class Plante{
 
     private:
         std::string _nom;
-        int _motivation;
-        int _numero;
-        int _distance;
+        int _hydratation;
+        std::string _type;
+        int _pousse;
     public:
-        Escargot(std::string name, int motivation, int numero);   //constructeur            //pas besoin de mettre la distance car elle est à 0 de base
+        Plante(std::string name, int hydratation, std::string type);   //constructeur            //pas besoin de mettre la distance car elle est à 0 de base
         
         std::string getName();
-        std::string getLook();
-        int getDistance();
-        int getMotiver();
-        void avancer();             //pas de valeur de retour
-        void motiver();             //pas de valeur de retour
+        //std::string getLook();
+        int getPousser();
+        int getHydrater();
+        int getCouper();
+        void grandir();             //pas de valeur de retour
+        void hydrater();             //pas de valeur de retour
+        void tailler();
         //rien écrire pour numéro car il reste fixe pour chaque escargot
 };
 #endif

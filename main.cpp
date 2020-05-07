@@ -2,8 +2,8 @@
 #include <string>
 #include <vector>
 
-#include "Escargot.cpp"
-#include "Escargot.h"
+#include "Plante.cpp"
+#include "Plante.h"
 
 using namespace std;
 
@@ -19,66 +19,89 @@ using namespace std;
 int main()
 {
     int i;
-    int tour = 1;
+    int jour = 1;
     int choix1;
     int choix2;
     
-    Escargot Georges("Georges", 3, 1);
-    Escargot David("David", 2, 2);
+    Plante A("Plante A", 0, 0);
+    Plante B("Plante B", 0, 0);
+    Plante C("Plante C", 0, 0);
 
-    cout << "QUE LA COURSE COMMENCE !"<< endl<< endl;
+    cout << "QUE LE JEU COMMENCE !"<< endl<< endl;
 
-    while(tour < 10){
-        cout <<"Tapez 1 pour que Georges avance, tapez 2 pour motiver Georges"<<endl;
+    while(jour < 10){
+        cout <<"Que faire avec la plante A ?\n\n"<<endl;
+        
+        cout <<"Taper 1 pour donner de l'engrais,\n"<<endl;
+        cout <<"Taper 2 pour tailler,\n"<<endl;
+        cout <<"Taper 3 pour hydrater,\n"<<endl;
+        cout <<"Taper 4 pour vérifier les infos de la plante\n"<<endl;
+
         cin >> choix1;
-        if(choix1 == 1){                 //Faire avancer Georges
-            cout << "Georges avance !"<<endl;
-            Georges.avancer();
-            cout << "Distance parcourue par Georges : "<< Georges.getDistance() << endl;
+        if(choix1 == 1){                 //donner de l'engrais a la plante A
+            cout << "Vous donnez de l'engrais a la plante A"<<endl;
+            A.grandir();
+            cout << "La taille de la plante A est de "<< A.getPousser() << endl;
 
-            for(i=0;i<10;i++){           //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
-                if(i==Georges.getDistance()) cout << Georges.getLook();
-                else cout << "-";
-            }
+            // for(i=0;i<10;i++){           //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
+            //     if(i==Georges.getDistance()) cout << Georges.getLook();
+            //     else cout << "-";
+            // }
         }
-        else if(choix1 == 2){            //motiver Georges
-            cout << "Vous motivez Georges !"<<endl;
-            Georges.motiver();
-            cout << "Georges a maintenant "<< Georges.getMotiver() << " points de motivation " << endl;
+        else if(choix1 == 2){            //taillage de la plante A
+            cout << "Vous taillez la plante A"<<endl;
+            A.tailler();
+            cout << "La plante A a été taillé"<< A.getCouper() << endl;
         }
-
-        cout <<endl<< "QUE VA FAIRE DAVID MAINTENANT ?"<<endl<<endl;
-
-        cout << "Tapez 1 pour que David avance, tapez 2 pour motiver David"<<endl;
-        cin >> choix2;
-        if(choix2 == 1){                //Faire avancer David
-            cout << "David avance !"<<endl;
-            David.avancer();
-            cout << "Distance parcourue par David : "<< David.getDistance() << endl;
-
-            for(i=0;i<10;i++){          //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
-                if(i==David.getDistance()) cout << David.getLook();
-                else cout << "-";
-            }
+        else if(choix1 == 3){            //hydrater la plante A
+            cout << "Vous hydratez la plante A"<<endl;
+            A.hydrater();
+            cout << "La plante A a été hydraté"<< A.getHydrater() << endl;
         }
-        else if(choix2 == 2){           //motiver David
-            cout << "Vous motivez David !"<<endl;
-            David.motiver();
-            cout << "David a maintenant "<< David.getMotiver() << " points de motivation " << endl;
+        else if(choix1 == 4){            //voir les infos la plante A
+            cout << "Vous regardez les infos de la plante A"<<endl;
+            cout << "Niveau de nourriture de la plante A : "<< A.getPousser() << "\n" << endl;
+            cout << "Niveau de coupe de la plante A : "<< A.getCouper() << endl;
+            cout << "Niveau d'hydratation de la plante A : "<< A.getHydrater() << endl;
+
+
         }
 
 
-        if(Georges.getDistance()==10){                        //Condition de victoire pour Georges
-           cout << endl << endl << "Georges remporte la course !"<< endl << endl;
-            return 0;  
-        }else if(David.getDistance()==10){                  //Condition de victoire pour David
-            cout << endl << endl << "David remporte la course !"<< endl << endl;
-            return 0;
-        }
 
-        tour++;
 
-        cout <<endl<<endl<< "NOUS EN SOMME AU TOUR "<<tour<<endl<<endl;
+        // cout <<endl<< "QUE VA FAIRE DAVID MAINTENANT ?"<<endl<<endl;
+
+        // cout << "Tapez 1 pour que David avance, tapez 2 pour motiver David"<<endl;
+        // cin >> choix2;
+        // if(choix2 == 1){                //Faire avancer David
+        //     cout << "David avance !"<<endl;
+        //     David.avancer();
+        //     cout << "Distance parcourue par David : "<< David.getDistance() << endl;
+
+        //     for(i=0;i<10;i++){          //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
+        //         if(i==David.getDistance()) cout << David.getLook();
+        //         else cout << "-";
+        //     }
+        // }
+        // else if(choix2 == 2){           //motiver David
+        //     cout << "Vous motivez David !"<<endl;
+        //     David.motiver();
+        //     cout << "David a maintenant "<< David.getMotiver() << " points de motivation " << endl;
+        // }
+
+
+        // if(Georges.getDistance()==10){                        //Condition de victoire pour Georges
+        //    cout << endl << endl << "Georges remporte la course !"<< endl << endl;
+        //     return 0;  
+        // }else if(David.getDistance()==10){                  //Condition de victoire pour David
+        //     cout << endl << endl << "David remporte la course !"<< endl << endl;
+        //     return 0;
+        // }
+
+        // tour++;
+
+        cout <<endl<<endl<< "Jour  "<<jour<<endl<<endl;
     }
 
 
