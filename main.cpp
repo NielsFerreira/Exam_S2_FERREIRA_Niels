@@ -42,11 +42,6 @@ int main()
             cout << "Vous donnez de l'engrais a la plante A"<<endl;
             A.grandir();
             cout << "La taille de la plante A est de "<< A.getPousser() << endl;
-
-            // for(i=0;i<10;i++){           //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
-            //     if(i==Georges.getDistance()) cout << Georges.getLook();
-            //     else cout << "-";
-            // }
         }
         else if(choix1 == 2){            //taillage de la plante A
             cout << "Vous taillez la plante A"<<endl;
@@ -63,43 +58,9 @@ int main()
             cout << "Niveau de nourriture de la plante A : "<< A.getPousser() << "\n" << endl;
             cout << "Niveau de coupe de la plante A : "<< A.getCouper() << endl;
             cout << "Niveau d'hydratation de la plante A : "<< A.getHydrater() << endl;
-
-
         }
 
-
-
-
-        // cout <<endl<< "QUE VA FAIRE DAVID MAINTENANT ?"<<endl<<endl;
-
-        // cout << "Tapez 1 pour que David avance, tapez 2 pour motiver David"<<endl;
-        // cin >> choix2;
-        // if(choix2 == 1){                //Faire avancer David
-        //     cout << "David avance !"<<endl;
-        //     David.avancer();
-        //     cout << "Distance parcourue par David : "<< David.getDistance() << endl;
-
-        //     for(i=0;i<10;i++){          //boucle for pour montrer la position de Georges qui va remplacer un trait par lui-même
-        //         if(i==David.getDistance()) cout << David.getLook();
-        //         else cout << "-";
-        //     }
-        // }
-        // else if(choix2 == 2){           //motiver David
-        //     cout << "Vous motivez David !"<<endl;
-        //     David.motiver();
-        //     cout << "David a maintenant "<< David.getMotiver() << " points de motivation " << endl;
-        // }
-
-
-        // if(Georges.getDistance()==10){                        //Condition de victoire pour Georges
-        //    cout << endl << endl << "Georges remporte la course !"<< endl << endl;
-        //     return 0;  
-        // }else if(David.getDistance()==10){                  //Condition de victoire pour David
-        //     cout << endl << endl << "David remporte la course !"<< endl << endl;
-        //     return 0;
-        // }
-
-        // tour++;
+         jour++;
 
         cout <<endl<<endl<< "Jour  "<<jour<<endl<<endl;
     }
