@@ -20,8 +20,7 @@ class Plante{
         int getHydrater();
         int getCouper();
         void grandir();             //pas de valeur de retour
-        void hydrater();             //pas de valeur de retour
-        void tailler();
-        //rien écrire pour numéro car il reste fixe pour chaque escargot
+        void hydrater();            //pas de valeur de retour
+        void tailler();             //pas de valeur de retour
 };
 #endif
