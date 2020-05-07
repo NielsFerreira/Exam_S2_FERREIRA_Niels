@@ -7,7 +7,7 @@
 #include <string>
 
 
-    Plante::Plante(std::string name, int hydrat, std::string typ) :
+    Plante::Plante(std::string name, int hydrat, int pousse, int coupe, std::string typ) :
         _nom(name), _hydratation(hydrat), _type(typ), _pousse(0)
         {}
 
@@ -22,7 +22,11 @@
     int Plante::getHydrater(){
         return _hydratation;
     }
-    
+
+    int Plante::getCouper(){
+        return _coupe;
+    }
+
     void Plante::grandir(){                       //fonction qui montre l'avancement
         _pousse += _hydratation;                   //position de à l'instant t de l'escargot + le déplacement en fonction de la valeur dans motivation
         _hydratation -= 1;                           //après effort d'avancement, perte de motivation
@@ -40,6 +44,9 @@
         _hydratation += 3;
     }
 
+    void Plante::tailler(){                       //augmenter le niveau de motivation pour pouvoir avancer
+        _coupe += 3;
+    }
 
 
 

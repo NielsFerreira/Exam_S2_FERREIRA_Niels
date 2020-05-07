@@ -11,11 +11,11 @@ class Plante{
         int _hydratation;
         std::string _type;
         int _pousse;
+        int _coupe;
     public:
-        Plante(std::string name, int hydratation, std::string type);   //constructeur            //pas besoin de mettre la distance car elle est à 0 de base
+        Plante(std::string name, int hydratation, int pousse, int coupe, std::string type);   //constructeur            //pas besoin de mettre la distance car elle est à 0 de base
         
         std::string getName();
-        //std::string getLook();
         int getPousser();
         int getHydrater();
         int getCouper();

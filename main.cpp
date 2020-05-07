@@ -23,9 +23,9 @@ int main()
     int choix1;
     int choix2;
     
-    Plante A("Plante A", 0, 0);
-    Plante B("Plante B", 0, 0);
-    Plante C("Plante C", 0, 0);
+    Plante A("Plante A", 0, 0, 0, "Chrysanthème");
+    Plante B("Plante B", 0, 0, 0, "Muguet");
+    Plante C("Plante C", 0, 0, 0, "Hortensia");
 
     cout << "QUE LE JEU COMMENCE !"<< endl<< endl;
 
@@ -35,7 +35,7 @@ int main()
         cout <<"Taper 1 pour donner de l'engrais,\n"<<endl;
         cout <<"Taper 2 pour tailler,\n"<<endl;
         cout <<"Taper 3 pour hydrater,\n"<<endl;
-        cout <<"Taper 4 pour vérifier les infos de la plante\n"<<endl;
+        cout <<"Taper 4 pour verifier les infos de la plante\n"<<endl;
 
         cin >> choix1;
         if(choix1 == 1){                 //donner de l'engrais a la plante A
@@ -46,16 +46,16 @@ int main()
         else if(choix1 == 2){            //taillage de la plante A
             cout << "Vous taillez la plante A"<<endl;
             A.tailler();
-            cout << "La plante A a été taillé"<< A.getCouper() << endl;
+            cout << "La plante A a ete taille"<< A.getCouper() << endl;
         }
         else if(choix1 == 3){            //hydrater la plante A
             cout << "Vous hydratez la plante A"<<endl;
             A.hydrater();
-            cout << "La plante A a été hydraté"<< A.getHydrater() << endl;
+            cout << "La plante A a ete hydrate"<< A.getHydrater() << endl;
         }
         else if(choix1 == 4){            //voir les infos la plante A
             cout << "Vous regardez les infos de la plante A"<<endl;
-            cout << "Niveau de nourriture de la plante A : "<< A.getPousser() << "\n" << endl;
+            cout << "Niveau de nourriture de la plante A : "<< A.getPousser() << endl;
             cout << "Niveau de coupe de la plante A : "<< A.getCouper() << endl;
             cout << "Niveau d'hydratation de la plante A : "<< A.getHydrater() << endl;
         }
